@@ -11,7 +11,7 @@ module LazyImages
 
       def image_tag_with_lazy_images(source, options={})
         options.merge!(
-          class: "#{options[:class]} rli-image",
+          class: "#{options[:class]}",
           src: path_to_image(source)
         )
 
@@ -20,8 +20,8 @@ module LazyImages
         )
 
         content_tag(:div, class: 'rli-wrapper') do
-          placeholder.to_s.html_safe +
-            (source ? image_tag_without_lazy_images(source, options) : '')
+          (source ? image_tag_without_lazy_images(source, options)\
+                  : placeholder.to_s.html_safe)
         end
       end
     end
