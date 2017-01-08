@@ -20,7 +20,7 @@ module LazyImages
         )
 
         content_tag(:div, class: 'rli-wrapper') do
-          (source ? image_tag_without_lazy_images(source, options)\
+          (source ? image_tag(source, options)\
                   : placeholder.to_s.html_safe)
         end
       end
