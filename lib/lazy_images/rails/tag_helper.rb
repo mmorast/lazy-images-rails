@@ -5,9 +5,9 @@ module LazyImages
     mattr_accessor :placeholder
 
     module TagHelper
-      def self.included(base)
-        base.send(:include, LazyImages::Rails::TagHelper)
-      end
+#       def self.included(base)
+#         base.send(:include, LazyImages::Rails::TagHelper)
+#       end
 
       def image_tag_with_lazy_images(source, options={})
         options.merge!(
