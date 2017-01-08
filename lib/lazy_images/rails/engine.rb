@@ -5,9 +5,10 @@ module LazyImages
   module Rails
     class Engine < ::Rails::Engine
       initializer :lazy_images_rails do
-        ActionView::Helpers::AssetTagHelper.module_eval do
-          include TagHelper
-        end
+        ActionView::Base.send(:include, TagHelper)
+#         ActionView::Helpers::AssetTagHelper.module_eval do
+#           include TagHelper
+#         end
       end
     end
   end
