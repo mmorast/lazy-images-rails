@@ -6,7 +6,7 @@ module LazyImages
 
     module TagHelper
       def self.included(base)
-        base.alias_method_chain :image_tag, :lazy_images
+#         base.alias_method_chain :image_tag, :lazy_images
       end
 
       def image_tag_with_lazy_images(source, options={})
